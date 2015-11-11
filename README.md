@@ -31,8 +31,7 @@ FROM human
 JOIN
   (SELECT human_vacation_dist.human_id
    FROM human_vacation_dist
-   WHERE distination_id IN (1,
-                            3)
+   WHERE distination_id IN (1,3)
    GROUP BY human_vacation_dist.human_id
    HAVING COUNT(*) = 2) a ON a.human_id = human.id
 ```
